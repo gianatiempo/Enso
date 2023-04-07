@@ -1,7 +1,7 @@
 import { matchSorter } from 'match-sorter'
 import { DefaultBodyType, PathParams, rest } from 'msw'
 import sortBy from 'sort-by'
-import type { ContactType } from '../types'
+import type { ContactType } from '@/types'
 
 let contacts: ContactType[] = [
   {

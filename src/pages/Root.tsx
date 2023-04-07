@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 import { Button, Input, Layout, theme, Typography } from 'antd'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import enso from '@/assets/enso.png'
 import useContacts from '@/hooks/useContacts'
 import useCreateContact from '@/hooks/useCreateContact'
-import enso from '../assets/enso.png'
+
 const { Header, Content, Footer, Sider } = Layout
+const siderStyle: CSSProperties = { overflow: 'auto', height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0 }
+const logoStyle: CSSProperties = {
+  height: 32,
+  margin: 16,
+  background: '#fff',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'nowrap',
+  justifyContent: 'space-evenly',
+}
+const searchStyle: CSSProperties = { display: 'flex', padding: '8px 4px' }
 
 export default function Root() {
   const {
@@ -21,27 +33,14 @@ export default function Root() {
   return (
     <>
       <Layout>
-        <Sider
-          theme="light"
-          style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0 }}
-        >
-          <div
-            style={{
-              height: 32,
-              margin: 16,
-              background: '#fff',
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'nowrap',
-              justifyContent: 'space-evenly',
-            }}
-          >
+        <Sider theme="light" style={siderStyle}>
+          <div style={logoStyle} onClick={() => navigate('/')}>
             <img src={enso} alt="Logo" height={32} />
             <Typography.Title level={3} type={'success'}>
               Starter
             </Typography.Title>
           </div>
-          <div>
+          <div style={searchStyle}>
             <Input
               id="q"
               value={q}

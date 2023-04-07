@@ -1,9 +1,9 @@
 export default function WelcomePage() {
   return (
     <p id="zero-state">
-      This is a demo for React Router.
+      This is a demo for React Router on Steroids (Typescript + MSW + TanStack Query + Ant Design).
       <br />
-      Check out <a href="https://reactrouter.com">the docs at reactrouter.com</a>.
+      Made with &#9829; by <a href="https://github.com/gianatiempo">Ariel Gianatiempo</a>.
     </p>
   )
 }
