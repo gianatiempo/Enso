@@ -98,7 +98,7 @@ export default function Root() {
               <Outlet />
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Starter App ©2023 Created by Ariel Gianatiempo</Footer>
+          <Footer style={{ textAlign: 'center' }}>Enso ©2023 Created by Ariel Gianatiempo</Footer>
         </Layout>
       </Layout>
     </>
