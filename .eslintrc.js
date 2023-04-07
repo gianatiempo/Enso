@@ -12,13 +12,13 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      alias: [['@', './src']],
-    },
+    // 'import/resolver': {
+    //   node: {
+    //     paths: ['src'],
+    //     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    //   },
+    //   alias: [['@', './src']],
+    // },
   },
   env: {
     browser: true,
@@ -33,7 +33,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
-  plugins: ['simple-import-sort', 'prettier'],
+  plugins: ['import', 'prettier'],
   rules: {
     semi: 0,
     indent: 0,
@@ -64,8 +64,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-var-requires': 0,
 
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
+    // 'simple-import-sort/imports': 'error',
+    // 'simple-import-sort/exports': 'error',
 
     'no-use-before-define': 0,
     'no-unused-vars': 0,
@@ -73,5 +73,30 @@ module.exports = {
     'consistent-return': 0,
     'object-curly-newline': 0,
     'operator-linebreak': 0,
+
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'never',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
 }

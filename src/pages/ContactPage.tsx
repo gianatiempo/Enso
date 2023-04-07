@@ -1,5 +1,4 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-
 import useContactById from '@/hooks/useContactById'
 import useDeleteContact from '@/hooks/useDeleteContact'
 import useUpdateContact from '@/hooks/useUpdateContact'

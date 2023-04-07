@@ -1,12 +1,11 @@
 import './index.css'
 import 'antd/dist/reset.css'
 
+import { StrictMode } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ConfigProvider } from 'antd'
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 import ErrorPage from './pages/ErrorPage'
 import Layout from './pages/Root'
 import WelcomePage from './pages/WelcomePage'

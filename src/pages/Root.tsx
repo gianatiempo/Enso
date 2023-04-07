@@ -1,10 +1,8 @@
-import { Button, Input, Layout, theme, Typography } from 'antd'
 import { useState } from 'react'
+import { Button, Input, Layout, theme, Typography } from 'antd'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-
 import useContacts from '@/hooks/useContacts'
 import useCreateContact from '@/hooks/useCreateContact'
-
 import enso from '../assets/enso.png'
 const { Header, Content, Footer, Sider } = Layout
 
